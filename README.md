@@ -34,7 +34,7 @@
 <h3>GIT</h3>
 <hr>
 
-<p>FAÇA O DOWNLOADS DO REPOSITORIO OU USE:<br><code></code></p>
+<p>FAÇA O DOWNLOADS DO REPOSITORIO OU USE:<br><code>git@github.com:joaov1ct0r/exercise-tracker-microservice.git</code></p>
 
 <h3>DEPENDENCIAS</h3>
 <hr>
