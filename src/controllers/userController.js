@@ -1,4 +1,4 @@
-import Exercises from '../models/exercisesModel';
+import Exercises from '../models/exercisesModel.js';
 
 import User from '../models/userModel';
 
