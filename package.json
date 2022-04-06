@@ -1,12 +1,13 @@
 {
   "name": "exercise-tracker-microservice",
   "version": "1.0.0",
-  "description": "",
+  "type": "module",
+  "description": "Sistema de Micro serviço para cadastro de usuario e registro de exercicios, feito em NodeJS utilizando express",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node src/index.js"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["javascript", "nodejs", "express", "microservice", "cors", "dotenv", "mongoose", "mongodb"],
+  "author": "github.com/joaov1ct0r",
   "license": "ISC"
 }
