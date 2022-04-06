@@ -13,3 +13,5 @@ const dbConnection = () => {
         }
     );
 };
+
+export default dbConnection;
