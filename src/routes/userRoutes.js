@@ -11,6 +11,8 @@ const userRouter = express.Router();
 
 userRouter.get('/users', handleAllUsers);
 
+userRouter.get('/users/:id/logs', handleUserLog);
+
 userRouter.post('/users', handleNewUser);
 
 userRouter.post('/users/:_id/exercises', handleNewExercise);
