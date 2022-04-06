@@ -138,4 +138,4 @@ const handleUserLog = (req, res) => {
     });
 };
 
-export { handleNewUser, handleNewExercise, handleAllUsers };
+export { handleNewUser, handleNewExercise, handleAllUsers, handleUserLog };
