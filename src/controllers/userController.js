@@ -1,6 +1,6 @@
 import Exercises from '../models/exercisesModel.js';
 
-import User from '../models/userModel';
+import User from '../models/userModel.js';
 
 const handleNewUser = (req, res) => {
     let username = req.body.username;
