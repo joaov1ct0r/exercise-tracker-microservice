@@ -13,3 +13,5 @@ const app = express();
 dbConnection();
 
 app.use(express.json());
+
+app.use(express.urlencoded({ extended: true }));
