@@ -10,3 +10,5 @@ const exercisesSchema = new Schema({
 });
 
 const Exercises = mongoose.model('Exercises', exercisesSchema);
+
+export default Exercises;
