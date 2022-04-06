@@ -19,3 +19,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 
 app.use('/api', userRouter);
+
+app.listen(process.env.SERVER_PORT, () => {
+    console.log('Server running');
+});
