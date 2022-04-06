@@ -8,6 +8,8 @@ import {
 
 const userRouter = express.Router();
 
+userRouter.get('/users', handleAllUsers);
+
 userRouter.post('/users', handleNewUser);
 
 userRouter.post('/users/:_id/exercises', handleNewExercise);
