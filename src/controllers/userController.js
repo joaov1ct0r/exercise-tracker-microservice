@@ -84,4 +84,4 @@ const handleAllUsers = (req, res) => {
     });
 };
 
-export { handleNewUser, handleNewExercise };
+export { handleNewUser, handleNewExercise, handleAllUsers };
