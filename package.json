@@ -7,7 +7,19 @@
   "scripts": {
     "start": "node src/index.js"
   },
-  "keywords": ["javascript", "nodejs", "express", "microservice", "cors", "dotenv", "mongoose", "mongodb"],
+  "keywords": [
+    "javascript",
+    "nodejs",
+    "express",
+    "microservice",
+    "cors",
+    "dotenv",
+    "mongoose",
+    "mongodb"
+  ],
   "author": "github.com/joaov1ct0r",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^13.0.0"
+  }
 }
