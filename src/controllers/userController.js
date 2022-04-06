@@ -25,3 +25,5 @@ const handleNewUser = (req, res) => {
         }
     });
 };
+
+export { handleNewUser };
