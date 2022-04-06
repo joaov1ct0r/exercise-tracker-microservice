@@ -75,4 +75,13 @@ const handleNewExercise = (req, res) => {
     });
 };
 
+const handleAllUsers = (req, res) => {
+    User.find({}, (err, data) => {
+        if (err) throw err;
+        else {
+            return res.json(data);
+        }
+    });
+};
+
 export { handleNewUser, handleNewExercise };
