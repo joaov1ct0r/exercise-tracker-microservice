@@ -75,4 +75,4 @@ const handleNewExercise = (req, res) => {
     });
 };
 
-export { handleNewUser };
+export { handleNewUser, handleNewExercise };
