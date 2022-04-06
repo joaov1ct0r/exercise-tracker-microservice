@@ -84,4 +84,58 @@ const handleAllUsers = (req, res) => {
     });
 };
 
+const handleUserLog = (req, res) => {
+    if (req.params.id === undefined || req.params.id === null) {
+        return res.json({ error: '_id não encontrado' });
+    }
+
+    let userId = req.params.id;
+
+    let findConditions = { userId: userId };
+
+    if (
+        (req.query.from !== undefined && req.query.from !== '') ||
+        (req.query.to !== undefined && req.query.to !== '')
+    ) {
+        findConditions.date = {};
+
+        if (req.query.from !== undefined && req.query.from !== '') {
+            findConditions.date.$gte = new Date(req.query.from);
+        }
+
+        if (req.query.to !== undefined && req.query.to !== '') {
+            findConditions.date.$lte = new Date(req.query.to);
+        }
+    }
+
+    let limit = req.query.limit !== '' ? parseInt(req.query.limit) : 0;
+
+    User.findById(userId, (err, data) => {
+        if (!err && data !== null) {
+            Exercises.find(findConditions)
+                .sort({ date: 'asc' })
+                .limit(limit)
+                .exec((err2, data2) => {
+                    if (err2) throw err2;
+                    else {
+                        return res.json({
+                            username: data['username'],
+                            _id: data['_id'],
+                            log: data2.map(function (e) {
+                                return {
+                                    description: e.description,
+                                    duration: e.duration,
+                                    date: e.date.toDateString()
+                                };
+                            }),
+                            count: data2.length
+                        });
+                    }
+                });
+        } else {
+            return res.json({ error: 'Usuario não encontrado!' });
+        }
+    });
+};
+
 export { handleNewUser, handleNewExercise, handleAllUsers };
