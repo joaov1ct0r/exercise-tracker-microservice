@@ -3,7 +3,8 @@ import express from 'express';
 import {
     handleNewUser,
     handleNewExercise,
-    handleAllUsers
+    handleAllUsers,
+    handleUserLog
 } from '../controllers/userController.js';
 
 const userRouter = express.Router();
