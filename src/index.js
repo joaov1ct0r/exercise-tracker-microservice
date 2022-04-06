@@ -11,3 +11,5 @@ import userRouter from './routes/userRoutes.js';
 const app = express();
 
 dbConnection();
+
+app.use(express.json());
