@@ -8,3 +8,5 @@ const exercisesSchema = new Schema({
     duration: { type: Number, min: 1, required: true },
     date: { type: Date, default: Date.now }
 });
+
+const Exercises = mongoose.model('Exercises', exercisesSchema);
