@@ -1,6 +1,9 @@
 import express from 'express';
 
-import { handleNewUser } from '../controllers/userController.js';
+import {
+    handleNewUser,
+    handleNewExercise
+} from '../controllers/userController.js';
 
 const userRouter = express.Router();
 
