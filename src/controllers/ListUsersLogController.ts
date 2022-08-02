@@ -7,7 +7,7 @@ import IListUsersLogService from "../interfaces/IListUsersLogService";
 export default class ListUsersLogController {
   public async handle(req: Request, res: Response): Promise<Response> {
     if (req.params.id === undefined || req.params.id === null) {
-      return res.json({ error: "_id não encontrado" });
+      return res.status(400).json({ error: "_id não encontrado" });
     }
 
     const userId = req.params.id;

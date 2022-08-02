@@ -1,0 +1,193 @@
+{
+ "openapi": "3.0.0",
+  "info": {
+    "title": "Social Media JWT Rest Api",
+    "description": "API Rest de media social para cadastro e login de usuarios, e criação e interação de posts",
+    "contact": {
+    "linkedin": "https://www.linkedin.com/in/joaov1ct0r/"
+    },
+  "version": "1.0.0"
+  },
+  "paths": {
+    "/api/user/users": {
+      "get": {
+        "summary": "Visualização de usuarios",
+        "description": "Rota para visualizar usuarios cadastrados",
+        "tags": ["User"],
+        "parameters": [
+          {}
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "examples": {
+                "user": {
+                  "value": {}
+                }
+              }
+            }
+          }
+        }
+      },
+      "responses": {
+        "200": {
+          "description": "Ok"
+        }
+      }
+    },
+    "/api/user/users": {
+      "post": {
+        "summary": "Cadastro de usuarios!",
+        "description": "Rota para cadastrar usuarios!",
+        "tags": ["User"],
+        "parameters": [
+          {
+            "username": "user@mail.com",
+            "description": "username do usuario",
+            "in": "body",
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "examples": {
+                "user": {
+                  "value": {}
+                }
+              }
+            }
+          }
+        }
+      },
+      "responses": {
+        "500": {
+          "description": "Internal Error"
+        },
+        "400": {
+          "description": "Bad Request"
+        },
+        "201": {
+          "description": "Created"
+        }
+      }
+    },
+    "/api/user/users/:id/logs": {
+      "get": {
+        "summary": "Apresentação de Logs!",
+        "description": "Rota para apresentar logs de usuarios!",
+        "tags": ["User"],
+        "parameters": [
+          {
+            "_id": "1",
+            "description": "id do usuario",
+            "in": "parameters",
+            "required": true
+          },
+          {
+            "from": "13/04/1994",
+            "description": "Data a começar a busca",
+            "in": "query",
+            "required": false
+          },
+          {
+            "to": "11/09/2001",
+            "description": "Data corte da busca",
+            "in": "query",
+            "required": false
+          },
+          {
+            "limit": "5",
+            "description": "Limite de dados a serem retornados",
+            "in": "query",
+            "required": false
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "examples": {
+                "user": {
+                  "value": {}
+                }
+              }
+            }
+          }
+        }
+      },
+      "responses": {
+        "400": {
+          "description": "Bad Request"
+        },
+        "200": {
+          "description": "Ok"
+        }
+      }
+    },
+    "/api/user/users/:_id/exercises": {
+      "post": {
+        "summary": "Cadastro de Exercicios!",
+        "description": "Rota para cadastrar novos exercicios!",
+        "parameters": [
+          {
+            "_id": "1",
+            "description": "Id do usuario",
+            "in": "parameters",
+            "required": true
+          },
+          {
+            "description": "Novo exercicio de perna!",
+            "in": "body",
+            "required": true
+          },
+          {
+            "duration": "10",
+            "description": "Tempo de duração do exercicio em segundos!",
+            "in": "body",
+            "required": true
+          },
+          {
+            "date": "24/02/2005",
+            "description": "Data para realizar os exercicios!",
+            "in": "body",
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "examples": {
+                "user": {
+                  "value": {
+                    "description": "Novo exercicio de perna!",
+                    "date": "24/02/2005",
+                    "duration": "10"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "responses": {
+        "400": {
+          "description": "Bad Request"
+        },
+        "201": {
+          "description": "Created"
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "User": {
+        "type": "object",
+        "properties": {
+          "username": "string",
+          "_id": "number"
+        }
+      }
+    }
+  }
+}
