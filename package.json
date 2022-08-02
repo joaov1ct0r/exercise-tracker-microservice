@@ -5,7 +5,9 @@
   "description": "Sistema de Micro serviço para cadastro de usuario e registro de exercicios, feito em NodeJS utilizando express",
   "main": "index.js",
   "scripts": {
-    "start": "node src/index.js"
+    "build": "tsc",
+    "start": "node ./build/index.js",
+    "dev": "ts-node-dev ./src/index.ts"
   },
   "keywords": [
     "javascript",
