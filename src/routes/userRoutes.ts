@@ -12,6 +12,10 @@ import ListAllUsersController from "../controllers/ListAllUsersController.js";
 
 import IListAllUsersController from "../interfaces/IListAllUsersController.js";
 
+import ListUsersLogController from "../controllers/ListUsersLogController.js";
+
+import IListUsersLogController from "../interfaces/IListUsersLogController.js";
+
 import {
   handleNewUser,
   handleNewExercise,
@@ -29,9 +33,12 @@ const createExercisesController: ICreateExercisesController =
 const listAllUsersController: IListAllUsersController =
   new ListAllUsersController();
 
+const listUsersLogController: IListUsersLogController =
+  new ListUsersLogController();
+
 userRouter.get("/users", listAllUsersController.handle);
 
-userRouter.get("/users/:id/logs", handleUserLog);
+userRouter.get("/users/:id/logs", listUsersLogController.handle);
 
 userRouter.post("/users", createUserController.handle);
 
