@@ -16,13 +16,6 @@ import ListUsersLogController from "../controllers/ListUsersLogController.js";
 
 import IListUsersLogController from "../interfaces/IListUsersLogController.js";
 
-import {
-  handleNewUser,
-  handleNewExercise,
-  handleAllUsers,
-  handleUserLog,
-} from "../controllers/userController.js";
-
 const userRouter = express.Router();
 
 const createUserController: ICreateUserController = new CreateUserController();
