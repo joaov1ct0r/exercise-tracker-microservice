@@ -6,18 +6,25 @@ import dbConnection from "./config/database.js";
 
 import userRouter from "./routes/userRoutes.js";
 
-const app = express();
+export default class App {
+  public server: express.Application;
 
-dbConnection();
+  constructor() {
+    this.server = express();
+    dbConnection();
+    this.middlewares();
+    this.userRoutes();
+  }
 
-app.use(express.json());
+  private middlewares() {
+    this.server.use(cors());
 
-app.use(express.urlencoded({ extended: true }));
+    this.server.use(express.json());
 
-app.use(cors());
+    this.server.use(express.urlencoded({ extended: true }));
+  }
 
-app.use("/api", userRouter);
-
-app.listen(process.env.SERVER_PORT, () => {
-  console.log("Server running");
-});
+  private userRoutes() {
+    this.server.use("/api/user", userRouter);
+  }
+}
